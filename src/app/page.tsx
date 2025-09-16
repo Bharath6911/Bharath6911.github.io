@@ -9,7 +9,7 @@ import CountUp from "react-countup"
 import Image from "next/image"
 import { useInView } from "react-intersection-observer"
 import Navbar from "@/components/ui/Navbar"
-import emailjs from "emailjs-com"
+import emailjs from "@emailjs/browser"
 
 interface ProjectCardProps {
   title: string
