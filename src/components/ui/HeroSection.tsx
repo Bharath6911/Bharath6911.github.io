@@ -22,10 +22,10 @@ export default function HeroSection({ aboutRef }: HeroSectionProps) {
         transition={{ duration: 0.8 }}
         className="flex-1 text-center md:text-left"
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-          Hi, I'm <span className="text-green-400">Bharath Mummadi</span>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-500 dark:text-white transition-colors duration-300">
+          Hi, I'm <p className="text-green-700 dark:text-green-400 transition-colors duration-300">Bharath Mummadi</p>
         </h1>
-        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mb-6">
+        <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-2xl mb-6 transition-colors duration-300">
           I build with Static web3, React, and IoT Java full-stack development.
           surfing through internet getting to know new tech and keep growing.
         </p>

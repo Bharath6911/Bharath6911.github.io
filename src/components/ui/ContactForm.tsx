@@ -22,10 +22,12 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
 export default function ContactForm() {
   return (
-    <section id="contact" className="px-6 md:px-10 py-12 md:py-16 bg-black/80 backdrop-blur-md text-white text-center">
-      <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+    <section id="contact" className="px-6 md:px-10 py-12 md:py-16 bg-gray-100/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white text-center transition-colors duration-300">
+      <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white transition-colors duration-300">Contact Me</h2>
       
-      <p className="mb-6 text-gray-300">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+      
+      
+      <p className="mb-6 text-gray-700 dark:text-gray-300 transition-colors duration-300">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
 
       <motion.form 
         onSubmit={sendEmail} 
@@ -39,28 +41,28 @@ export default function ContactForm() {
           name="name"
           placeholder="Your Name"
           required
-          className="p-3 rounded-lg border border-gray-300 text-black"
+          className="p-3 rounded-lg border-2 border-gray-400 dark:border-gray-300 text-gray-900 dark:text-black bg-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
         />
         <input
           type="email"
           name="email"
           placeholder="Your Email"
           required
-          className="p-3 rounded-lg border border-gray-300 text-black"
+          className="p-3 rounded-lg border-2 border-gray-400 dark:border-gray-300 text-gray-900 dark:text-black bg-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
         />
         <input
           type="text"
           name="title"
           placeholder="Subject"
           required
-          className="p-3 rounded-lg border border-gray-300 text-black"
+          className="p-3 rounded-lg border-2 border-gray-400 dark:border-gray-300 text-gray-900 dark:text-black bg-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
         />
         <textarea
           name="message"
           rows={5}
           placeholder="Your Message"
           required
-          className="p-3 rounded-lg border border-gray-300 text-black resize-none"
+          className="p-3 rounded-lg border-2 border-gray-400 dark:border-gray-300 text-gray-900 dark:text-black bg-white focus:border-blue-500 focus:outline-none resize-none transition-colors duration-300"
         />
         <button
           type="submit"
@@ -69,9 +71,9 @@ export default function ContactForm() {
           Send Message
         </button>
 <br/    >
-         {/* Personal Slogan */}
+        {/* Personal Slogan */}
       <div className="max-w-3xl mx-auto mb-8">
-        <p className="text-lg md:text-xl font-medium leading-relaxed mb-4 text-gray-200 italic">
+        <p className="text-lg md:text-xl font-medium leading-relaxed mb-4 text-gray-800 dark:text-gray-200 italic transition-colors duration-300">
           "I don't believe in shortcuts to success. I'm focused on hard work, adding value, 
           and serving others. My projects and skills reflect this approach, and I'm always 
           learning to grow stronger as a developer."

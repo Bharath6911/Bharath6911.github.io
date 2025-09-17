@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-// import { ThemeToggle } from "./ThemeToggle"
+import { ThemeToggle } from "./ThemeToggle"
 
 interface NavbarProps {
   aboutInView: boolean
@@ -110,13 +110,13 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
                 ))}
               </div>
               
-              {/* Theme Toggle - Temporarily disabled */}
-              {/* <ThemeToggle /> */}
+              {/* Theme Toggle */}
+              <ThemeToggle />
             </div>
 
             {/* Mobile menu button and theme toggle */}
             <div className="md:hidden flex items-center gap-2">
-              {/* <ThemeToggle /> */}
+              <ThemeToggle />
               
               <button
                 onClick={() => setIsOpen(!isOpen)}

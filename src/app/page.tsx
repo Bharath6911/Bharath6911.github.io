@@ -118,7 +118,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-white dark:bg-gray-900 transition-colors duration-300">
       <ParticleBackground />
       <div className="relative z-10">
         <Navbar aboutInView={aboutInView} greeting={greeting} />
@@ -126,8 +126,8 @@ export default function Home() {
         <HeroSection aboutRef={aboutRef} />
 
         {/* Skills */}
-        <section id="skills" className="px-6 md:px-10 py-16 md:py-20 bg-gray-900/50">
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">Skills</h2>
+        <section id="skills" className="px-6 md:px-10 py-16 md:py-20 bg-gray-100/80 dark:bg-gray-900/50 backdrop-blur-sm transition-colors duration-300">
+          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">Skills</h2>
           <motion.div
             variants={container}
             initial="hidden"
@@ -154,7 +154,7 @@ export default function Home() {
               <motion.span
                 key={skill}
                 variants={fadeUp}
-                className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium shadow-sm border border-white/20 text-white"
+                className="px-4 py-2 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium shadow-sm border border-gray-200 dark:border-white/20 text-gray-900 dark:text-white transition-colors duration-300"
               >
                 {skill}
               </motion.span>
@@ -163,8 +163,8 @@ export default function Home() {
         </section>
 
         {/* Experience / Timeline section */}
-        <section id="experience" className="px-6 md:px-10 py-16 md:py-20">
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">Experience & Education</h2>
+        <section id="experience" className="px-6 md:px-10 py-16 md:py-20 bg-white dark:bg-transparent transition-colors duration-300">
+          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">Experience & Education</h2>
           <VerticalTimeline>
             {timelineEvents.map((ev, index) => (
               <VerticalTimelineElement
@@ -175,20 +175,11 @@ export default function Home() {
                   color: "#fff",
                   border: "3px solid #fff"
                 }}
-                contentStyle={{
-                  background: "rgba(255, 255, 255, 0.1)",
-                  color: "#fff",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
-                  borderRadius: "12px",
-                  backdropFilter: "blur(10px)"
-                }}
-                contentArrowStyle={{
-                  borderRight: "7px solid rgba(255, 255, 255, 0.1)"
-                }}
-                dateClassName="text-gray-300 font-semibold"
+                className="timeline-element"
+                dateClassName="!text-gray-700 dark:!text-gray-300 !font-semibold !text-base"
               >
-                <h3 className="text-xl font-semibold text-white mb-2">{ev.title}</h3>
-                <h4 className="text-md text-gray-300 leading-relaxed">{ev.subtitle}</h4>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">{ev.title}</h3>
+                <h4 className="text-md text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">{ev.subtitle}</h4>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
@@ -197,8 +188,8 @@ export default function Home() {
         <ProjectsSection projects={projects} />
 
         {/* Achievements section */}
-        <section id="achievements" className="px-6 md:px-10 py-16 md:py-20">
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">Achievements & Workshops</h2>
+        <section id="achievements" className="px-6 md:px-10 py-16 md:py-20 bg-gray-100/80 dark:bg-transparent backdrop-blur-sm transition-colors duration-300">
+          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">Achievements & Workshops</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {achievements.map((ach, i) => (
               <motion.div
@@ -206,28 +197,28 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                className="flex flex-col items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg shadow-md w-40 border border-white/20"
+                className="flex flex-col items-center p-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-md w-40 border border-gray-200 dark:border-white/20 transition-colors duration-300"
               >
-                <span className="text-4xl font-bold text-green-400">
+                <span className="text-4xl font-bold text-green-500 dark:text-green-400 transition-colors duration-300">
                   <CountUp end={ach.value} duration={1.5} />
                 </span>
-                <span className="mt-2 text-gray-200 text-center">{ach.label}</span>
+                <span className="mt-2 text-gray-700 dark:text-gray-200 text-center transition-colors duration-300">{ach.label}</span>
               </motion.div>
             ))}
           </div>
         </section>
 
         {/* Notes / Blog Section */}
-        <section id="notes" className="px-6 md:px-10 py-16 md:py-20 bg-gray-900/50">
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">What I'm Learning</h2>
+        <section id="notes" className="px-6 md:px-10 py-16 md:py-20 bg-white dark:bg-gray-900/50 backdrop-blur-sm transition-colors duration-300">
+          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">What I'm Learning</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20">
-              <h3 className="text-xl font-semibold mb-2 text-white">Advanced Java</h3>
-              <p className="text-gray-300">Starting object-oriented coding, working on small programs.</p>
+            <div className="p-6 bg-gray-100/90 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 dark:border-white/20 transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">Advanced Java</h3>
+              <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">Starting object-oriented coding, working on small programs.</p>
             </div>
-            <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20">
-              <h3 className="text-xl font-semibold mb-2 text-white">Dockers & Mini Data Center Setup</h3>
-              <p className="text-gray-300">Learning containerization and virtual machines in cloud.</p>
+            <div className="p-6 bg-gray-100/90 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 dark:border-white/20 transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">Dockers & Mini Data Center Setup</h3>
+              <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">Learning containerization and virtual machines in cloud.</p>
             </div>
           </div>
         </section>

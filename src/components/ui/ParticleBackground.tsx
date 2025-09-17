@@ -36,13 +36,16 @@ export default function ParticleBackground() {
       const particleCount = Math.min(50, Math.floor(window.innerWidth / 20));
       
       for (let i = 0; i < particleCount; i++) {
+        const isDarkMode = document.documentElement.classList.contains('dark')
         particles.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 2 + 1,
           speedX: Math.random() * 0.5 - 0.25,
           speedY: Math.random() * 0.5 - 0.25,
-          color: `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`
+          color: isDarkMode 
+            ? `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`
+            : `rgba(50, 50, 50, ${Math.random() * 0.3 + 0.1})`
         });
       }
     };

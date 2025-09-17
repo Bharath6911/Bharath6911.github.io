@@ -2,16 +2,44 @@
 
 import { motion } from "framer-motion"
 import { Sun, Moon } from "lucide-react"
-import { useTheme } from "./ThemeProvider"
 import { useState, useEffect } from "react"
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
+  const [isDark, setIsDark] = useState(true) // Default to dark
 
-  // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true)
+    
+    // Check localStorage and system preference
+    const savedTheme = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    
+    if (savedTheme) {
+      setIsDark(savedTheme === 'dark')
+    } else {
+      setIsDark(systemPrefersDark)
+    }
   }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
+    // Apply theme to document
+    const root = document.documentElement
+    if (isDark) {
+      root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+    }
+
+    // Save to localStorage
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  }, [isDark, mounted])
+
+  const toggleTheme = () => {
+    setIsDark(!isDark)
+  }
 
   if (!mounted) {
     // Return a placeholder that matches the button structure
@@ -22,12 +50,6 @@ export function ThemeToggle() {
     )
   }
 
-  return <MountedThemeToggle />
-}
-
-function MountedThemeToggle() {
-  const { theme, toggleTheme } = useTheme()
-
   return (
     <motion.button
       onClick={toggleTheme}
@@ -37,13 +59,13 @@ function MountedThemeToggle() {
       aria-label="Toggle theme"
     >
       <motion.div
-        key={theme}
+        key={isDark ? 'dark' : 'light'}
         initial={{ rotate: -90, opacity: 0 }}
         animate={{ rotate: 0, opacity: 1 }}
         exit={{ rotate: 90, opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        {theme === 'dark' ? (
+        {isDark ? (
           <Sun size={20} className="text-yellow-400" />
         ) : (
           <Moon size={20} className="text-blue-400" />
