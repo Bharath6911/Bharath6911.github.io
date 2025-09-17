@@ -10,6 +10,8 @@ import Image from "next/image"
 import { useInView } from "react-intersection-observer"
 import Navbar from "@/components/ui/Navbar"
 import emailjs from "@emailjs/browser"
+import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si"
+
 
 interface ProjectCardProps {
   title: string
@@ -479,27 +481,38 @@ export default function Home() {
 </section>
 
         {/* Footer / Contact */}
-        <footer className="px-6 md:px-10 py-12 md:py-16 bg-black/80 backdrop-blur-md text-white text-center">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 text-gray-200">
-              I don't believe in shortcuts to success. I'm focused on hard work, adding value, 
-              and serving others. My projects and skills reflect this approach, and I'm always 
-              learning to grow stronger as a developer.
-            </p>
-            <p className="text-gray-400 mb-6">
-              If you have questions, feel free to email me at{" "}
-              <a href="mailto:mummadibharath9966@gmail.com" className="text-blue-400 hover:underline">
-                mummadibharath9966@gmail.com
-              </a>. I'm excited to connect and help where I can!
-            </p>
-          </div>
+<footer className="px-6 md:px-10 py-12 md:py-16 bg-black/80 backdrop-blur-md text-white text-center">
+  <div className="max-w-3xl mx-auto">
+    <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 text-gray-200">
+      I don't believe in shortcuts to success. I'm focused on hard work, adding value, 
+      and serving others. My projects and skills reflect this approach, and I'm always 
+      learning to grow stronger as a developer.
+    </p>
+    <p className="text-gray-400 mb-6">
+      If you have questions, feel free to email me at{" "}
+      <a href="mailto:mummadibharath9966@gmail.com" className="text-blue-400 hover:underline">
+        mummadibharath9966@gmail.com
+      </a>. I'm excited to connect and help where I can!
+    </p>
+  </div>
 
-          <div className="flex justify-center gap-6 mt-4 mb-6">
-            <a href="https://www.linkedin.com/in/bharath-mummadi-8a8515270" target="_blank" rel="noopener" className="hover:text-blue-400 transition-colors">LinkedIn</a>
-            <a href="https://github.com/Bharath6911" target="_blank" rel="noopener" className="hover:text-blue-400 transition-colors">GitHub</a>
-          </div>
-          <p className="mt-6 text-gray-500 text-sm">© {new Date().getFullYear()} Bharath Mummadi. All rights reserved.</p>
-        </footer>
+  <div className="flex justify-center gap-6 mt-4 mb-6">
+    <a href="https://github.com/Bharath6911" target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+      <SiGithub size={20} /> GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/bharath-mummadi-8a8515270" target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+      <SiLinkedin size={20} /> LinkedIn
+    </a>
+    <a href="https://www.instagram.com/bharat_041214/" target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+      <SiInstagram size={20} /> Instagram
+    </a>
+  </div>
+
+  <p className="mt-6 text-gray-500 text-sm">
+    © {new Date().getFullYear()} Bharath Mummadi. All rights reserved.
+  </p>
+</footer>
+
       </div>
     </div>
   )
