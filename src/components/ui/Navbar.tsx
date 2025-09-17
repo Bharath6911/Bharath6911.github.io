@@ -84,11 +84,11 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
               animate={{ opacity: 1 }}
               className="flex-shrink-0"
             >
-              <span className={`font-semibold text-lg ${
+              <i><span className={`font-semibold text-lg ${
                 scrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                {greeting}
-              </span>
+                {greeting}, people!
+              </span></i>
             </motion.div>
 
             {/* Desktop Navigation */}
