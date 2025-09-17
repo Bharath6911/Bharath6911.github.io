@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+// import { ThemeToggle } from "./ThemeToggle"
 
 interface NavbarProps {
   aboutInView: boolean
@@ -72,7 +73,7 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' 
             : 'bg-transparent'
         }`}
       >
@@ -85,22 +86,22 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
               className="flex-shrink-0"
             >
               <i><span className={`font-semibold text-lg ${
-                scrolled ? 'text-gray-900' : 'text-white'
+                scrolled ? 'text-gray-900 dark:text-white' : 'text-white'
               }`}>
                 {greeting}, people!
               </span></i>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden md:flex items-center gap-4">
+              <div className="flex items-baseline space-x-4">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors hover:scale-105 transform transition-transform ${
                       scrolled
-                        ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                        ? 'text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'
                         : 'text-gray-200 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -108,15 +109,20 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
                   </a>
                 ))}
               </div>
+              
+              {/* Theme Toggle - Temporarily disabled */}
+              {/* <ThemeToggle /> */}
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* Mobile menu button and theme toggle */}
+            <div className="md:hidden flex items-center gap-2">
+              {/* <ThemeToggle /> */}
+              
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`p-2 rounded-md transition-colors ${
                   scrolled
-                    ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'
                     : 'text-gray-200 hover:text-white hover:bg-white/10'
                 }`}
                 aria-label="Toggle menu"
@@ -140,7 +146,7 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200"
+              className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item, index) => (
@@ -151,7 +157,7 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   >
                     {item.label}
                   </motion.a>
@@ -169,7 +175,7 @@ export default function Navbar({ aboutInView, greeting }: NavbarProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 z-40 md:hidden"
+            className="fixed inset-0 bg-black/20 dark:bg-black/40 z-40 md:hidden"
             onClick={() => setIsOpen(false)}
           />
         )}

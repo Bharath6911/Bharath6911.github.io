@@ -128,3 +128,23 @@
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
 }
+
+/* Timeline styling for dark theme */
+.vertical-timeline::before {
+  background: linear-gradient(to bottom, #ec4899, #8b5cf6, #eab308) !important;
+  width: 4px !important;
+}
+
+.vertical-timeline-element-date {
+  color: #d1d5db !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right-color: rgba(255, 255, 255, 0.1) !important;
+}
