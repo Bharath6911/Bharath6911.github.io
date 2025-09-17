@@ -23,8 +23,9 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 export default function ContactForm() {
   return (
     <section id="contact" className="px-6 md:px-10 py-12 md:py-16 bg-black/80 backdrop-blur-md text-white text-center">
-      <h2 className="text-3xl font-bold mb-10">Contact Me</h2>
-      <p className="mb-6">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+      <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+      
+      <p className="mb-6 text-gray-300">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
 
       <motion.form 
         onSubmit={sendEmail} 
@@ -67,7 +68,17 @@ export default function ContactForm() {
         >
           Send Message
         </button>
+<br/    >
+         {/* Personal Slogan */}
+      <div className="max-w-3xl mx-auto mb-8">
+        <p className="text-lg md:text-xl font-medium leading-relaxed mb-4 text-gray-200 italic">
+          "I don't believe in shortcuts to success. I'm focused on hard work, adding value, 
+          and serving others. My projects and skills reflect this approach, and I'm always 
+          learning to grow stronger as a developer."
+        </p>
+      </div>
       </motion.form>
+      
 
       {/* Social Links */}
       <div className="flex justify-center gap-6 mt-8">
