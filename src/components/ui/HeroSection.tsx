@@ -26,8 +26,8 @@ export default function HeroSection({ aboutRef }: HeroSectionProps) {
           Hi, I'm <p className="text-green-700 dark:text-green-400 transition-colors duration-300">Bharath Mummadi</p>
         </h1>
         <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-2xl mb-6 transition-colors duration-300">
-          I build with Static web3, React, and IoT Java full-stack development.
-          surfing through internet getting to know new tech and keep growing.
+          Full-stack developer with experience in React, web3, Java, IoT.
+          Continuously learning new technologies.
         </p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"

@@ -101,7 +101,7 @@ export default function ContactForm() {
           <SiLinkedin size={24} />
         </a>
         <a 
-          href="https://instagram.com/yourusername" 
+          href="https://www.instagram.com/bharat_041214/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-white transition-colors"
