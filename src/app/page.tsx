@@ -50,13 +50,19 @@ export default function Home() {
       title: "IoT Data Integration & Automation",
       description: "Used Raspberry Pi to automate sensor data collection and database integration.",
       link:"https://github.com/Bharath6911/data-integration-automation-iot",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format", // IoT sensors placeholder
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format",
     },
     {
       title: "Mini Data Center",
       description: "Using docker inside Azure virtual machines to create a mini data center.",
       link: "https://github.com/Bharath6911/Mini-Data-Center-",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format", // Data center placeholder
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format", 
+    },
+    {
+      title: "personal portfolio",
+      description: "Showcasing my projects and skills.",
+      link: "https://github.com/Bharath6911/Bharath6911.github.io",
+      image: "/portfolio.png", 
     },
   ]
 
