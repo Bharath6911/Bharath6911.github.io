@@ -39,7 +39,7 @@ export default function ProjectCard({ title, description, link, image }: Project
         </div>
         {link ? (
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <Button className="w-full">View Project</Button>
+            <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">View Project</Button>
           </a>
         ) : (
           <Button disabled className="w-full">Details Soon</Button>

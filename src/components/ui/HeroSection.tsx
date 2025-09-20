@@ -36,12 +36,12 @@ export default function HeroSection({ aboutRef }: HeroSectionProps) {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <a href="#projects">
-            <Button className="w-full sm:w-auto bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            <Button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               View Projects
             </Button>
           </a>
           <a href="/resume-IT.pdf" download>
-            <Button className="w-full sm:w-auto bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            <Button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               Download Resume
             </Button>
           </a>

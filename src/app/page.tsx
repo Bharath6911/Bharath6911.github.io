@@ -10,10 +10,12 @@ import Navbar from "@/components/ui/Navbar"
 import ParticleBackground from "@/components/ui/ParticleBackground"
 import HeroSection from "@/components/ui/HeroSection"
 import ProjectsSection from "@/components/ui/ProjectsSection"
+import CertificatesModal from "@/components/ui/CertificatesModal"
 import ContactForm from "@/components/ui/ContactForm"
 
 export default function Home() {
   const [greeting, setGreeting] = useState("Hello")
+  const [showCertificates, setShowCertificates] = useState(false)
   const { ref: aboutRef, inView: aboutInView } = useInView({
     threshold: 0.4,
   })
@@ -34,44 +36,62 @@ export default function Home() {
   }, [])
   
   const projects = [
-    {
-      title: "CineNest Streaming Website",
-      description: "Prototype streaming site built with HTML, CSS, JavaScript. Demo login: Bharath / 9966",
-      link: "https://cinenest.great-site.net",
-      image: "/cinenest.png",
-    },
-    {
-      title: "Web based Real-time Chat App",
-      description: "Prototype chat application built with Node.js, Express, and Socket.io.",
-      link: "https://share-anything.onrender.com",
-      image: "/shareanything.png",
-    },
-    {
-      title: "IoT Data Integration & Automation",
-      description: "Used Raspberry Pi to automate sensor data collection and database integration.",
-      link:"https://github.com/Bharath6911/data-integration-automation-iot",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format", // IoT sensors placeholder
-    },
-    {
-      title: "Mini Data Center",
-      description: "Using docker inside Azure virtual machines to create a mini data center.",
-      link: "https://github.com/Bharath6911/Mini-Data-Center-",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format", // Data center placeholder
-    },
-  ]
+  {
+    title: "CineNest Streaming Website",
+    description: "Built a prototype streaming platform using HTML, CSS, and JavaScript. Implemented login system with demo credentials (Bharath / 9966). Focused on responsive design, dynamic content rendering, and user-friendly navigation. Learned how to structure large-scale front-end projects and simulate media delivery.",
+    link: "https://cinenest.great-site.net",
+    image: "/cinenest.png",
+  },
+  {
+    title: "Web based Real-time Chat App",
+    description: "Tried creating a real-time chat application with Node.js, Express, and Socket.io. Achieved instant messaging, live user connections, and active session handling. Gained experience in backend event-driven programming and WebSocket communication for scalability.",
+    link: "https://share-anything.onrender.com",
+    image: "/shareanything.png",
+  },
+  {
+    title: "IoT Data Integration & Automation",
+    description: "Used Raspberry Pi to collect sensor data and automate integration with a database. Automated processes reduced manual data entry and improved accuracy. Learned how to handle hardware-software communication and push IoT data into real-time systems for analysis.",
+    link: "https://github.com/Bharath6911/data-integration-automation-iot",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format",
+  },
+  {
+    title: "Mini Data Center",
+    description: "Deployed multiple services inside Azure virtual machines using Docker. Created a controlled mini data center environment for practice in cloud resource management. Achieved container orchestration, networking between services, and cloud deployment of yaml practices.",
+    link: "https://github.com/Bharath6911/Mini-Data-Center-",
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format",
+  },
+]
+
 
   const skills = [
-    { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-    { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    // Frontend Technologies
+    { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "React (learning)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Java (beginner)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-    { name: "Raspberry Pi", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" },
-    { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+     { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    
+    // Backend Technologies
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+     
+    // Databases
+     { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    
+    // DevOps & Cloud
+    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
     { name: "AWS", icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
     { name: "Azure", icon: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" },
-    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-    { name: "IoT", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
+    { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+    
+    // Tools & Others
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { name: "Raspberry Pi", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" },
+    { name: "Socket.io", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" },
+    { name: "REST APIs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
     { name: "Web3", icon: "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" },
   ]
 
@@ -153,7 +173,7 @@ export default function Home() {
 
         {/* Skills */}
         <section id="skills" className="px-6 md:px-10 py-16 md:py-20 bg-gray-100/80 dark:bg-gray-900/50 backdrop-blur-sm transition-colors duration-300">
-          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">Skills</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">Technologies & Tools I Work With</h2>
           <motion.div
             variants={container}
             initial="hidden"
@@ -209,42 +229,59 @@ export default function Home() {
         {/* Achievements section */}
         <section id="achievements" className="px-6 md:px-10 py-16 md:py-20 bg-gray-100/80 dark:bg-transparent backdrop-blur-sm transition-colors duration-300">
           <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">Certificates & Achievements</h2>
+          
+          {/* Summary Stats */}
+          <div className="flex flex-wrap justify-center gap-8 mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col items-center p-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-md w-40 border border-gray-200 dark:border-white/20 transition-colors duration-300"
+            >
+              <span className="text-4xl font-bold text-green-500 dark:text-green-400 transition-colors duration-300">
+                <CountUp end={8} duration={1.5} />
+              </span>
+              <span className="mt-2 text-gray-700 dark:text-gray-200 text-center transition-colors duration-300">Certificates</span>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col items-center p-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-md w-40 border border-gray-200 dark:border-white/20 transition-colors duration-300"
+            >
+              <span className="text-4xl font-bold text-blue-500 dark:text-blue-400 transition-colors duration-300">
+                <CountUp end={3} duration={1.5} />
+              </span>
+              <span className="mt-2 text-gray-700 dark:text-gray-200 text-center transition-colors duration-300">Awards Won</span>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col items-center p-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-lg shadow-md w-40 border border-gray-200 dark:border-white/20 transition-colors duration-300"
+            >
+              <span className="text-4xl font-bold text-purple-500 dark:text-purple-400 transition-colors duration-300">
+                <CountUp end={5} duration={1.5} />
+              </span>
+              <span className="mt-2 text-gray-700 dark:text-gray-200 text-center transition-colors duration-300">Workshops</span>
+            </motion.div>
+          </div>
+
+          {/* View Certificates Button */}
           <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-center"
           >
-            {achievements.map((ach, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                whileHover={{ scale: 1.02, y: -3 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative w-full max-w-[320px] mx-auto min-h-[350px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden flex flex-col transform-gpu border border-gray-100 dark:border-gray-700 group cursor-pointer"
-              >
-                <div className="h-40 sm:h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={ach.src} 
-                    alt={ach.label}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    onError={(e) => {
-                      // Fallback to placeholder if image fails to load
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100' height='100' fill='%23f3f4f6'/%3e%3ctext x='50%25' y='50%25' font-size='12' text-anchor='middle' alignment-baseline='middle' fill='%236b7280'%3eCertificate%3c/text%3e%3c/svg%3e";
-                    }}
-                  />
-                </div>
-                <div className="p-4 sm:p-6 flex flex-col justify-between flex-grow">
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{ach.label}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">{ach.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            <button
+              onClick={() => setShowCertificates(true)}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              View All Certificates
+            </button>
           </motion.div>
         </section>
 
@@ -264,6 +301,13 @@ export default function Home() {
         </section>
 
         <ContactForm />
+
+        {/* Certificates Modal */}
+        <CertificatesModal 
+          isOpen={showCertificates}
+          onClose={() => setShowCertificates(false)}
+          certificates={achievements}
+        />
 
       </div>
     </div>

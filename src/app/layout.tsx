@@ -26,7 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
       >
         <ThemeProvider>
           {children}
