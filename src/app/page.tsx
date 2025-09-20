@@ -50,19 +50,13 @@ export default function Home() {
       title: "IoT Data Integration & Automation",
       description: "Used Raspberry Pi to automate sensor data collection and database integration.",
       link:"https://github.com/Bharath6911/data-integration-automation-iot",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format", // IoT sensors placeholder
     },
     {
       title: "Mini Data Center",
       description: "Using docker inside Azure virtual machines to create a mini data center.",
       link: "https://github.com/Bharath6911/Mini-Data-Center-",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format", 
-    },
-    {
-      title: "personal portfolio",
-      description: "Showcasing my projects and skills.",
-      link: "https://github.com/Bharath6911/Bharath6911.github.io",
-      image: "/portfolio.png", 
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format", // Data center placeholder
     },
   ]
 
@@ -127,12 +121,12 @@ export default function Home() {
 
   // Variants
   const fadeUp: Variants = {
-    hidden: { y: 40, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     show: { 
       y: 0, 
       opacity: 1, 
       transition: { 
-        duration: 0.6, 
+        duration: 0.4, 
         ease: "easeOut"
       } 
     },
@@ -143,7 +137,7 @@ export default function Home() {
     show: { 
       opacity: 1, 
       transition: { 
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
         delayChildren: 0.1
       } 
     },
@@ -219,21 +213,22 @@ export default function Home() {
             variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
           >
             {achievements.map((ach, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
-                whileHover={{ scale: 1.05, y: -6 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative w-[320px] min-h-[350px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden flex flex-col transform-gpu border border-gray-100 dark:border-gray-700 group cursor-pointer"
+                whileHover={{ scale: 1.02, y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative w-full max-w-[320px] mx-auto min-h-[350px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden flex flex-col transform-gpu border border-gray-100 dark:border-gray-700 group cursor-pointer"
               >
-                <div className="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+                <div className="h-40 sm:h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
                   <img 
                     src={ach.src} 
                     alt={ach.label}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     onError={(e) => {
                       // Fallback to placeholder if image fails to load
@@ -242,10 +237,10 @@ export default function Home() {
                     }}
                   />
                 </div>
-                <div className="p-6 flex flex-col justify-between flex-grow">
+                <div className="p-4 sm:p-6 flex flex-col justify-between flex-grow">
                   <div>
-                    <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{ach.label}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{ach.description}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{ach.label}</h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">{ach.description}</p>
                   </div>
                 </div>
               </motion.div>
