@@ -114,15 +114,10 @@
 
 @layer base {
   * {
-    border-color: var(--color-border);
-    outline-color: var(--color-ring);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-offset: 0.5px;
+    @apply border-border outline-ring/50;
   }
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    @apply bg-background text-foreground;
   }
 }
 
