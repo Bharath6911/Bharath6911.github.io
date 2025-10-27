@@ -26,7 +26,7 @@ export default function HeroSection({ aboutRef }: HeroSectionProps) {
           Hi, I'm <p className="text-green-700 dark:text-green-400 transition-colors duration-300">Bharath Mummadi</p>
         </h1>
         <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-2xl mb-6 transition-colors duration-300">
-          React, web3, Java, IoT.
+          Tech enthusiast, 
           Continuously learning new technologies.
         </p>
         <motion.div
