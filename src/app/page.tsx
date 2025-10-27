@@ -290,8 +290,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white transition-colors duration-300">What I'm Learning</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="p-6 bg-gray-100/90 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 dark:border-white/20 transition-colors duration-300">
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">Advanced Java</h3>
-              <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">Starting object-oriented coding, working on small programs.</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">Linux Administration</h3>
+             <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">Practicing shell commands, permissions, user management, and preparing for the RHCSA exam.</p>
             </div>
             <div className="p-6 bg-gray-100/90 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 dark:border-white/20 transition-colors duration-300">
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">Dockers & Mini Data Center Setup</h3>
