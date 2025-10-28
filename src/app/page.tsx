@@ -60,6 +60,12 @@ export default function Home() {
     link: "https://github.com/Bharath6911/Mini-Data-Center-",
     image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=200&fit=crop&auto=format",
   },
+  {
+    title: "CI/CD-Based Two-Tier Web Application Deployment",
+    description: "Implemented a CI/CD pipeline using GitHub Actions to automate testing and deployment of a two-tier web application on AWS. Achieved seamless integration between code commits and deployment, reducing manual intervention. Gained hands-on experience with cloud services, infrastructure as code, and automated workflows.",
+    link: "https://github.com/Bharath6911/ci-cd-pipeline",
+    image: "/projectVMVM.jpg",
+  }
 ]
 
 
@@ -70,6 +76,7 @@ export default function Home() {
     { name: "AWS", icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
     { name: "Azure", icon: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" },
     { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+    { name: "VMware", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vmware/vmware-original.svg" },
     
     // Tools & Others
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
@@ -78,7 +85,6 @@ export default function Home() {
    
     // Backend Technologies
     { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
     { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
      
     // Databases
