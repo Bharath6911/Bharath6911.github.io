@@ -64,7 +64,7 @@ export default function Home() {
     title: "CI/CD-Based Two-Tier Web Application Deployment",
     description: "Implemented a CI/CD pipeline using GitHub Actions to automate testing and deployment of a two-tier web application on AWS. Achieved seamless integration between code commits and deployment, reducing manual intervention. Gained hands-on experience with cloud services, infrastructure as code, and automated workflows.",
     link: "https://github.com/Bharath6911/ci-cd-pipeline",
-    image: "/projectVMVM.jpg",
+    image: "images/projectVMVM.png",
   }
 ]
 
