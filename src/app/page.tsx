@@ -85,7 +85,6 @@ export default function Home() {
    
     // Backend Technologies
     { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
      
     // Databases
      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
@@ -102,6 +101,11 @@ export default function Home() {
   ]
 
   const timelineEvents = [
+    {
+      date: "2026",
+      title: "Cognizant",
+      subtitle: "Workplace Infrastructure & Dispatch Support with 6 months of expierience in Cloud infrastucture security domain",
+    },
     {
       date: "2025",
       title: "Wipro Training",
