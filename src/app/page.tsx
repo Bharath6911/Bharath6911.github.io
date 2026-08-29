@@ -104,7 +104,7 @@ export default function Home() {
     {
       date: "2026",
       title: "Cognizant",
-      subtitle: "Workplace Infrastructure & Dispatch Support with 6 months of expierience in Cloud infrastucture security domain",
+      subtitle: "Workplace Infrastructure & Dispatch Support with 6 months of experience in Cloud infrastructure security domain",
     },
     {
       date: "2025",
@@ -114,7 +114,7 @@ export default function Home() {
     {
       date: "2024-2025",
       title: "Final year project",
-      subtitle: "Data integration and automation,Developed a streaming website using static web3 Won the First prize for both projects on national science-Day 2025",
+      subtitle: "Data integration and automation. Developed a streaming website using static web3. Won the First prize for both projects on national science-Day 2025",
     },
     {
       date: "2023-2024",

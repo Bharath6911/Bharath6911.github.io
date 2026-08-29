@@ -8,10 +8,10 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   emailjs.sendForm(
-    "service_0241diz",       
-    "template_9b7zhki",        
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,       
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,        
     e.currentTarget,
-    "xqQ_JmUyA2Q6690TN"        
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY        
   ).then(
     () => alert("Message sent successfully!"),
     (error) => alert("Failed to send message: " + error.text)

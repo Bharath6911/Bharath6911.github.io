@@ -14,8 +14,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bharath's Portfolio",
-  description: "created by bharath using nextjs and tailwindcss",
+  title: "Bharath's Portfolio - IT Professional & Developer",
+  description: "Portfolio of Bharath Mummadi, IT professional building skills across Linux, Cloud, Infrastructure, DevOps, and Enterprise IT Support. Showcasing projects, skills, certificates, and achievements.",
+  keywords: "bharath, portfolio, IT professional, developer, Linux, Cloud, DevOps, Next.js, Tailwind CSS, React, projects, certificates, achievements",
+  authors: [
+    {
+      name: "Bharath Mummadi",
+    },
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: "Bharath's Portfolio - IT Professional & Developer",
+    description: "Portfolio of Bharath Mummadi, IT professional building skills across Linux, Cloud, Infrastructure, DevOps, and Enterprise IT Support.",
+    images: [
+      {
+        url: "/hero-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bharath Mummadi - Portfolio Preview",
+      },
+    ],
+    siteName: "Bharath Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bharath's Portfolio - IT Professional & Developer",
+    description: "Portfolio of Bharath Mummadi, IT professional building skills across Linux, Cloud, Infrastructure, DevOps, and Enterprise IT Support.",
+    images: [
+      "/hero-image.jpg",
+    ],
+  },
 };
 
 export default function RootLayout({
